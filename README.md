@@ -32,9 +32,9 @@ Throughput analysis of the \textit{Baxter} WIP shows significant degradation und
      \label{fig 4: Comparative Network Throughput graph of Simulated IoMT Network Attack Scenarios targeting the Hexoskin SHS}
  \end{figure}
 
-For \textit{Hexoskin} SHS, throughput starts at 2 Mbps under NORMAL conditions and stabilizes at 1 Mbps by Flow ID 3. Attacks affect throughput differently: DoS peaks at 4 Mbps, dropping to 0 Mbps at Flow ID 3; DDoS decreases from 3 Mbps to 0.5 Mbps; MITM drops from 2 Mbps to 0 Mbps; and BH consistently results in 0 Mbps by Flow ID 3 \cite{c20}.
+For Hexoskin SHS, throughput starts at 2 Mbps under NORMAL conditions and stabilizes at 1 Mbps by Flow ID 3. Attacks affect throughput differently: DoS peaks at 4 Mbps, dropping to 0 Mbps at Flow ID 3; DDoS decreases from 3 Mbps to 0.5 Mbps; MITM drops from 2 Mbps to 0 Mbps; and BH consistently results in 0 Mbps by Flow ID 3 \cite{c20}.
 
-\subsection{One-Way Delay (OWD)}
+### One-Way Delay (OWD)
 The graphs in Fig. 5 and Fig. 6 illustrate the comparative performance analysis of OWD for all five network scenarios.
 
 \begin{figure}
@@ -54,7 +54,7 @@ OWD analysis of WIP and SHS in IoMT networks reveals distinct delay patterns und
     \label{fig 6: Comparative End-to-End delay graph of Simulated IoMT Network Attack Scenarios targeting the Hexoskin SHS}
 \end{figure}
  
-\subsection{Packet Delay Variation (PDV)}
+### Packet Delay Variation (PDV)
 Consolidating the PDV from all five scenarios, the 
 graphs are shown on Fig. 7 and Fig. 8.
 
@@ -74,7 +74,7 @@ PDV analysis of the WIP shows that DoS and MITM attacks cause significant PDV at
     \label{fig 8: Comparative PDV graph of Simulated IoMT Network Attack Scenarios targeting the Hexoskin SHS}
 \end{figure}
 
-\subsection{Packet Loss}
+### Packet Loss
 A detailed packet loss analysis was performed in all scenarios, as shown on the projected graph in Fig. 9.
 \begin{figure}
     \centering
