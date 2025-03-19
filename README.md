@@ -10,10 +10,10 @@ This study design simulates a wireless IoMT network using the WLAN 802.11 protoc
 
 ![image](https://github.com/user-attachments/assets/e6eecd62-8dcf-4f85-83b6-496c2500cb5f)
 
-\section{Network Performance Analysis}
+## Network Performance Analysis
 This section presents a comparative performance analysis of the four simulated IoMT network attack scenarios targeting both the \textit{Baxter} WIP, and the \textit{Hexoskin} SHS devices. Key metrics -Network Throughput, OWD, PDV, and Packet Loss - are analyzed from line graphs, with a NORMAL network scenario as a benchmark for comparison. The graphs are generated using a Python script with \textit{matplotlib} and \textit{pandas}, extracting flow monitor statistics from XML files, and producing a CSV file of key metric values against Flow IDs \cite{c17} \cite{c18} \cite{c19}. The analysis of these results are discussed below.
 
-\subsection{Network Throughput}
+### Network Throughput
 The consolidated network throughput from all five scenarios on both targeted device nodes are summarized on projected graphs shown in Fig. 3 and Fig. 4 respectively.
 
  \begin{figure}
