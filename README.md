@@ -6,12 +6,12 @@ attacks. The findings identify network vulnerabilities and propose controls to b
 security and resilience and ensure safety in patient care.
 
 # Research Experiment Design
-This study design simulates a wireless IoMT network using the WLAN 802.11 protocol, comprising a Wireless Access Point, Baxter Wireless Infusion Pump (WIP), and Hexoskin Smart Health Shirt (SHS). The setup replicates a real-world patient-centric environment for integrated healthcare devices. The aim is to establish security controls for healthcare institutions, leveraging insights from the OpenICE interoperability platform \cite{c10} supporting real-time cardiac and cognitive monitoring, as shown in the Figure below.
+This study design simulates a wireless IoMT network using the WLAN 802.11 protocol, comprising a Wireless Access Point, Baxter Wireless Infusion Pump (WIP), and Hexoskin Smart Health Shirt (SHS). The setup replicates a real-world patient-centric environment for integrated healthcare devices. The aim is to establish security controls for healthcare institutions, leveraging insights from the OpenICE interoperability platform supporting real-time cardiac and cognitive monitoring, as shown in the Figure below.
 
 ![image](https://github.com/user-attachments/assets/e6eecd62-8dcf-4f85-83b6-496c2500cb5f)
 
 ## Network Performance Analysis
-This section presents a comparative performance analysis of the four simulated IoMT network attack scenarios targeting both the \textit{Baxter} WIP, and the \textit{Hexoskin} SHS devices. Key metrics -Network Throughput, OWD, PDV, and Packet Loss - are analyzed from line graphs, with a NORMAL network scenario as a benchmark for comparison. The graphs are generated using a Python script with \textit{matplotlib} and \textit{pandas}, extracting flow monitor statistics from XML files, and producing a CSV file of key metric values against Flow IDs \cite{c17} \cite{c18} \cite{c19}. The analysis of these results are discussed below.
+This section presents a comparative performance analysis of the four simulated IoMT network attack scenarios targeting both the \textit{Baxter} WIP, and the \textit{Hexoskin} SHS devices. Key metrics -Network Throughput, OWD, PDV, and Packet Loss - are analyzed from line graphs, with a NORMAL network scenario as a benchmark for comparison. The graphs are generated using a Python script with matplotlib and pandas, extracting flow monitor statistics from XML files, and producing a CSV file of key metric values against Flow IDs \cite{c17} \cite{c18} \cite{c19}. The analysis of these results are discussed below.
 
 ### Network Throughput
 The consolidated network throughput from all five scenarios on both targeted device nodes are summarized on projected graphs shown in Fig. 3 and Fig. 4 respectively.
