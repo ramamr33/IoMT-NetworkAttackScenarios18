@@ -49,13 +49,77 @@ A detailed packet loss analysis was performed in all scenarios, as shown on the 
 
 <img width="367" height="223" alt="image" src="https://github.com/user-attachments/assets/a7668af1-9a00-452c-a6a9-65cdb020358f" />
 
-
 On the WIP, analysis shows that the MITM attack causes total packet loss and network failure, while DoS and BH attacks result in no packet loss, demonstrating resilience to these threats. Similarly, the SHS does not show packet loss under DoS, DDoS, and BH attacks, indicating robust performance. However, the MITM attack leads to packet loss 100\% in Flow ID 1, revealing a critical vulnerability and highlighting the need for enhanced security against MITM attacks. 
 
 TABLE III and TABLE IV (https://zenodo.org/records/16810649) both summarize the collection of all the key metric values that have been extracted from the CSV files, of all simulated scenarios on both targeted devices as nodes in the IoMT network respectively.
 
+## Bluetooth Energy Consumption for Hexoskin SHS
+The Bluetooth energy consumption logs for the Hexoskin SHS remained constant at 2.580 joules across
+NORMAL, MITM, and MQTT scenarios (as highlighted in Tables 6). Despite observed performance
+degradations, these attacks did not increase energy usage on the device’s wireless module. This highlights
+that energy alone is insufficient to detect attacks in resource-constrained IoMT devices, underscoring the
+need for multi-metric anomaly detection combining traffic, timing, and integrity measures.
+
+## Statistical Validation
+To ensure a rigorous and reproducible evaluation of IoMT network scenarios, statistical validation was
+performed using data from 540 network flows (60 seeds, 10 simulations each producing 9 flows per
+scenario). The aim was to assess how key metrics—throughput, OWD, PDV, and packet loss—respond
+to various attack conditions. One-way ANOVA identified overall metric variance, and Tukey’s HSD
+pinpointed which scenario pairs had significant differences, ensuring that observed degradations were not
+random variations but were attributed to specific network attack behaviours based on statistical confidence.
+ANOVA results showed no significant variation in throughput (F = 0.55, p = 0.739), but significant differences for OWD (p = 0.015), PDV (p < 2.17×10), and packet loss (p < 6.33×10). Tukey’s HSD results revealed five significant pairwise differences each for PDV and packet loss, and one for OWD. For instance, MITM attacks caused 11.50% packet loss versus 1.86% under BH (p = 0.000), and a significant drop in PDV compared to NORMAL. These results, backed by consistent simulation sets, standardized data collection, and strong statistical indicators, highlight MITM as the most severe attack that severely impacts packet integrity and timing consistency. Packet loss and PDV emerge as reliable indicators for detecting real-time threats, supporting flow-level monitoring for IoMT network security frameworks.
+
+## Performance Integrity Benchmarking against Clinical Thresholds
+A benchmarking process was employed to evaluate the statistical performance results by comparing them
+against thresholds derived from the NORMAL scenario, which represents clinically validated, acceptable
+network behavior. These thresholds were based on the mean values from simulated baseline datasets, with
+throughput set to a ± 10% tolerance and OWD, PDV, and packet loss capped at 110% of their baseline
+values—reflecting ISO/IEEE 11073 standards for clinical safety.
+This framework ensures compliance with ISO 11073 interoperable medical communication protocols, particularly for time-sensitive applications. A Python-based ISO benchmarking script (shown
+in Listing 1.14 ) applied these thresholds to assess each metric under different attack scenarios for both
+the Baxter WIP and Hexoskin SHS, using ✓(’compliant’) and ✗(’non-comformant’) indicators to denote
+compliance or violation. This approach systematically identifies threats that compromise clinical safety and
+interoperability in IoMT networks. Fig. 8 and Table 10 summarizes these clinical threshold applications
+against the metrics results of all the simulated IoMT network scenarios.
+
+<img width="1000" height="600" alt="image" src="https://github.com/user-attachments/assets/305219e6-021e-4710-8455-bdcb930e6493" />
+
 
 ## Overall Patterns
-The analysis identifies critical vulnerabilities in Baxter WIP and Hexoskin SHS to MITM attacks, leading to packet loss, performance degradation, and network disruption. WIP experiences high PDV under MITM and DoS, while SHS suffers disruptions from DoS/DDoS. Unlike other attacks, MITM poses the highest risk, potentially compromising patient safety by altering drug dosages and device readings.
+Among all attack scenarios evaluated, the MITM attack posed the most critical threat to both the Baxter
+WIP and the Hexoskin SHS. Statistically significant results (mean packet loss = 11.50%, p < 0.0001)
+highlight its severe impact, with marked increases in packet delay variation (PDV) and one-way delay
+Fig. 8. Heatmap of defined ISO 11073-compliant IoMT Benchmarks with Clinical Thresholds
+(OWD). These impairments undermine the reliability of real-time data exchange in IoMT systems, risking
+misinterpretation of patient vitals and incorrect actuation, such as improper drug dosages or altered
+sensor readings.
+However, despite achieving these results, there are notable limitations that prevented these NS-3
+simulations from replicating fully realistic IoMT scenarios, such as lack of native support of Bluetooth
+Low Energy (BLE) and MQTT traffic that led to abstract network designs of these features (outlined in
+Table 3).
+Given the sensitivity of PDV and packet loss to such disruptions, mitigation should focus on preserving
+timing precision and data integrity. Techniques like Deep Packet Inspection (DPI) enhance payload-level
+threat detection but may increase OWD due to processing delays. Network Behavior Analysis (NBA)
+and Anomaly Detection (NAD) offer adaptive protection with minimal throughput impact, albeit
+with slight packet variations. Network Detection and Response (NDR) improves packet loss resilience via
+rapid threat containment. Encryption and encapsulation reduce tampering risks but may marginally affect
+PDV. Federated Learning (FL) enables decentralized anomaly detection with low resource overhead and
+preserves both latency and throughput. Integrated deployment of these methods can enhance
+IoMT security while maintaining system performance and safety.
 
-Robust security is essential to prevent data manipulation. While blockchain authentication enhances security, its complexity and energy demands make it unsuitable for resource-limited IoMT devices. Alternative preventative solutions -Deep Packet Inspection (DPI), Network Behavioral Analysis (NBA), Network Anomaly Detection (NAD), Network Detection and Respeonse (NDR), - and improved packet cleansing, encapsulation, and encryption for mitigation, should be explored for resilient IoMT security in healthcare.
+## Conclusion
+This study evaluates the impact of various attacks on the performance of the IoMT network and devices
+using NS-3, highlighting the severe vulnerabilities of MITM attacks. However, some features lacking
+native support from NS-3 highlights notable limitations in simulating absolutely realistic IoMT scenarios.
+The MITM attack results in complete packet loss and network failure, while DoS, DDoS, and BH attacks
+lead to delays and reduced throughput. Although blockchain-based authentication enhances security, its
+complexity, high energy consumption, and limited scalability challenge resource-constrained IoMT devices.
+Despite these disruptions, Bluetooth energy consumption remained unchanged across NORMAL, MITM,
+and MQTT scenarios (2.580 J), suggesting that such attacks do not impose additional energy burdens
+on the SHS device communication module. This reinforces the importance of using timing and integrity
+metrics—rather than energy usage alone—for detecting stealthy threats in IoMT environments. Future
+work should explore integrating energy-aware anomaly detection with traffic behavior analysis to enhance
+anomaly detection accuracy without compromising device efficiency. This comprises focusing on testing
+alternate preventive solutions like DPI, NBA, NAD and mitigation techniques such as NDR, improved
+packet cleaning, encapsulation, improved encryption and FL to strengthen cybersecurity and resilience in
+healthcare networks.
