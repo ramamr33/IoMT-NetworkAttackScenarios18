@@ -10,7 +10,8 @@ Supplementary Appendix is available. See: Zenodo: https://doi.org/10.5281/zenodo
 # Research Experiment Design
 This study design simulates a wireless IoMT network using the WLAN 802.11 protocol, comprising a Wireless Access Point, Baxter Wireless Infusion Pump (WIP), and Hexoskin Smart Health Shirt (SHS). The setup replicates a real-world patient-centric environment for integrated healthcare devices. The aim is to establish security controls for healthcare institutions, leveraging insights from the OpenICE interoperability platform supporting real-time cardiac and cognitive monitoring, as shown in the Figure below.
 
-![image](https://github.com/user-attachments/assets/e6eecd62-8dcf-4f85-83b6-496c2500cb5f)
+<img width="1375" height="712" alt="image" src="https://github.com/user-attachments/assets/cceaea07-9835-4517-b8b9-64f5854a93e9" />
+
 
 ## Network Performance Analysis
 This section presents a comparative performance analysis of the four simulated IoMT network attack scenarios targeting both the Baxter WIP, and the Hexoskin SHS devices. Key metrics -Network Throughput, OWD, PDV, and Packet Loss - are analyzed from line graphs, with a NORMAL network scenario as a benchmark for comparison. The graphs are generated using a Python script with matplotlib and pandas, extracting flow monitor statistics from XML files, and producing a CSV file of key metric values against Flow IDs. The analysis of these results are discussed below.
