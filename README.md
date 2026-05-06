@@ -5,6 +5,8 @@ In a controlled sandbox environment, it evaluates the network Throughput, One-Wa
 attacks. The findings identify network vulnerabilities and propose controls to both enhance IoMT
 security and resilience and ensure safety in patient care.
 
+Supplementary Appendix is available. See: Zenodo: https://doi.org/10.5281/zenodo.16747386 
+
 # Research Experiment Design
 This study design simulates a wireless IoMT network using the WLAN 802.11 protocol, comprising a Wireless Access Point, Baxter Wireless Infusion Pump (WIP), and Hexoskin Smart Health Shirt (SHS). The setup replicates a real-world patient-centric environment for integrated healthcare devices. The aim is to establish security controls for healthcare institutions, leveraging insights from the OpenICE interoperability platform supporting real-time cardiac and cognitive monitoring, as shown in the Figure below.
 
@@ -79,7 +81,7 @@ This framework ensures compliance with ISO 11073 interoperable medical communica
 in Listing 1.14 ) applied these thresholds to assess each metric under different attack scenarios for both
 the Baxter WIP and Hexoskin SHS, using ✓(’compliant’) and ✗(’non-comformant’) indicators to denote
 compliance or violation. This approach systematically identifies threats that compromise clinical safety and
-interoperability in IoMT networks. Fig. 8 and Table 10 summarizes these clinical threshold applications
+interoperability in IoMT networks. Figure below and Table in Appendix summarizes these clinical threshold applications
 against the metrics results of all the simulated IoMT network scenarios.
 
 <img width="1000" height="600" alt="image" src="https://github.com/user-attachments/assets/305219e6-021e-4710-8455-bdcb930e6493" />
