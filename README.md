@@ -55,25 +55,16 @@ The attack was simulated on all nodes, targeting each device individually. Unlik
 multiple attacker nodes flood the target node with excessive UDP traffic. The attack loop iterates over all
 nodes in the attacker container, with each node configured using the UDPEchoClientHelper class in
 NS-3 to generate UDP traffic and install the attack application (as per pseudo-code in Listing 1.5).
-Expected Impact: Similar to the single-node DoS UDP flood, this attack can deplete network performance,
+
+#### Expected Impact: 
+Similar to the single-node DoS UDP flood, this attack can deplete network performance,
 saturating bandwidth, deny node resources, and overload memory, affecting device functionality
 [16]. On the WIP, it could delay medical infusion delivery, while the Hexoskin SHS may produce inaccurate
-health readings. Excessive traffic may crash both devices, complicating mitigation. Table 2 compares the
+health readings. Excessive traffic may crash both devices, complicating mitigation. Table 2 below compares the
 impact of the UDP flooding attack between single-node DoS and multiple-node DDoS scenarios.
-Table 2. Comparative Impact of DoS and DDoS UDP Flooding Attacks
-Impact Factor DoS UDP
-Flood
-DDoS UDP
-Flood
-Traffic Volume Single attack source Multiple attacking
-nodes
-Detection Easier to identify Harder; requires
-network-wide analysis
-Impact Scope Localized to one
-node
-Affects entire network
-Mitigation Simple rate-limiting Needs load balancing,
-clustering
+
+##### Table 2. Comparative Impact of DoS and DDoS UDP Flooding Attacks
+<img width="200" height="101" alt="image" src="https://github.com/user-attachments/assets/0a0919c9-a138-4995-ac43-2ecf8e54aa91" />
 
 ### MITM Attack:
 This MITM attack intercepts, modifies, and forwards packets from target nodes using the MITMCallBack
