@@ -36,17 +36,20 @@ telemetry typical of wearable IoMT bio-signal streaming. Optional scheduled link
 to mimic transient Bluetooth disconnections before automatic reconnection (see Listing 1.3).
 
 ## Network Attack Model Scenarios
+
 ### DoS UDP Flooding Attack:
 The attack was simulated on each network node, with one node as the attacker. Configured with the
 UDPEchoClientHelper class (as per pseudo-code in Listing 1.4), the attacker transmitted excessive 1024-
 byte packets at 0.01-second intervals, with a maximum limit of 1,000,000 packets, as implemented in
 NS-3,. The attack aims to exhaust the resources of the target node (e.g. bandwidth) and interfere with
 legitimate traffic by producing excessive UDP traffic[16].
+
 #### Expected Impact: 
 A UDP flood attack can degrade the target node performance, leading to network
 disconnection, memory exhaustion, and device malfunction. In a WIP real-world setting, this could result
 in incorrect or delayed medication dosages, threatening patient safety. On the Hexoskin device, it may
 cause delayed or inaccurate health readings, compromising reliability.
+
 ### DDoS UDP Flooding Attack:
 The attack was simulated on all nodes, targeting each device individually. Unlike the previous DoS attack,
 multiple attacker nodes flood the target node with excessive UDP traffic. The attack loop iterates over all
@@ -71,6 +74,7 @@ node
 Affects entire network
 Mitigation Simple rate-limiting Needs load balancing,
 clustering
+
 ### MITM Attack:
 This MITM attack intercepts, modifies, and forwards packets from target nodes using the MITMCallBack
 function, linked to the attacker node for packet handling, as shown in Listing 1.6.
