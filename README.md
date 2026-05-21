@@ -63,8 +63,8 @@ saturating bandwidth, deny node resources, and overload memory, affecting device
 health readings. Excessive traffic may crash both devices, complicating mitigation. Table 2 below compares the
 impact of the UDP flooding attack between single-node DoS and multiple-node DDoS scenarios.
 
-##### Table 2. Comparative Impact of DoS and DDoS UDP Flooding Attacks
-<img width="1043" height="529" alt="image" src="https://github.com/user-attachments/assets/4a0c4a26-bf2c-42c1-adc8-768f43df007d" />
+   ##### Table 2. Comparative Impact of DoS and DDoS UDP Flooding Attacks
+<img width="794" height="403" alt="image" src="https://github.com/user-attachments/assets/4b5bf938-0a67-4a90-bfba-41a4eda3f004" />
 
 ### MITM Attack:
 This MITM attack intercepts, modifies, and forwards packets from target nodes using the MITMCallBack
